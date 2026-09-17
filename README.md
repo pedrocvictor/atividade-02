@@ -24,6 +24,4 @@ node algoritmos.js
 **App web**
 Basta abrir o `algoritmos.html` em qualquer navegador (ou publicar via GitHub Pages).
 
-## Vídeo de debug
 
-[Adicione aqui o link do vídeo mostrando o uso do debugger do VS Code: execução passo-a-passo, step into, debug console e breakpoint condicional]
