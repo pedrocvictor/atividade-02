@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel de Algoritmos — ADS Unifor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="brand">
+    <p class="brand-title">painel_algoritmos</p>
+    <p class="brand-sub">Análise e Desenvolvimento de Sistemas — Unifor<br>Atividade 2: interface web dos algoritmos</p>
+  </div>
+  <ul class="nav" id="nav-list">
+    <li><button class="active" data-panel="primo"><span class="idx">01</span> Número primo</button></li>
+    <li><button data-panel="somatorio"><span class="idx">02</span> Somatório</button></li>
+    <li><button data-panel="fibonacci"><span class="idx">03</span> Fibonacci</button></li>
+    <li><button data-panel="mdc"><span class="idx">04</span> MDC</button></li>
+    <li><button data-panel="quicksort"><span class="idx">05</span> Quicksort</button></li>
+    <li><button data-panel="intervalo"><span class="idx">06</span> Contagem em intervalo</button></li>
+  </ul>
+  <div class="sidebar-foot">6/6 algoritmos disponíveis</div>
+</nav>
+
+<main class="main">
+
+  <!-- 01 Número primo -->
+  <section class="panel active" id="primo">
+    <div class="panel-head">
+      <h1 class="panel-title">Número primo</h1>
+      <p class="panel-desc">Verifica se um número inteiro possui exatamente dois divisores: 1 e ele mesmo.</p>
+    </div>
+    <div class="card">
+      <div class="field-row">
+        <div class="field">
+          <label for="primo-n">Número</label>
+          <input type="number" id="primo-n" value="29" step="1">
+        </div>
+      </div>
+      <button class="run-btn" onclick="runPrimo()">Executar</button>
+      <div class="console" id="primo-out"><span class="empty">A saída aparece aqui após executar.</span></div>
+      <details class="source">
+        <summary>Ver código-fonte</summary>
+        <div class="code-block" id="primo-src"></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 02 Somatório -->
+  <section class="panel" id="somatorio">
+    <div class="panel-head">
+      <h1 class="panel-title">Somatório</h1>
+      <p class="panel-desc">Calcula a soma dos números inteiros de 1 até N.</p>
+    </div>
+    <div class="card">
+      <div class="field-row">
+        <div class="field">
+          <label for="soma-n">N</label>
+          <input type="number" id="soma-n" value="10" step="1" min="0">
+        </div>
+      </div>
+      <button class="run-btn" onclick="runSomatorio()">Executar</button>
+      <div class="console" id="soma-out"><span class="empty">A saída aparece aqui após executar.</span></div>
+      <details class="source">
+        <summary>Ver código-fonte</summary>
+        <div class="code-block" id="soma-src"></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 03 Fibonacci -->
+  <section class="panel" id="fibonacci">
+    <div class="panel-head">
+      <h1 class="panel-title">Sequência de Fibonacci</h1>
+      <p class="panel-desc">Gera os N primeiros termos da sequência, onde cada termo é a soma dos dois anteriores.</p>
+    </div>
+    <div class="card">
+      <div class="field-row">
+        <div class="field">
+          <label for="fib-n">Quantidade de termos</label>
+          <input type="number" id="fib-n" value="12" step="1" min="1">
+        </div>
+      </div>
+      <button class="run-btn" onclick="runFibonacci()">Executar</button>
+      <div class="console" id="fib-out"><span class="empty">A saída aparece aqui após executar.</span></div>
+      <details class="source">
+        <summary>Ver código-fonte</summary>
+        <div class="code-block" id="fib-src"></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 04 MDC -->
+  <section class="panel" id="mdc">
+    <div class="panel-head">
+      <h1 class="panel-title">Máximo Divisor Comum (MDC)</h1>
+      <p class="panel-desc">Calcula o maior número que divide dois valores simultaneamente, usando o algoritmo de Euclides.</p>
+    </div>
+    <div class="card">
+      <div class="field-row">
+        <div class="field">
+          <label for="mdc-a">Número A</label>
+          <input type="number" id="mdc-a" value="48" step="1">
+        </div>
+        <div class="field">
+          <label for="mdc-b">Número B</label>
+          <input type="number" id="mdc-b" value="18" step="1">
+        </div>
+      </div>
+      <button class="run-btn" onclick="runMdc()">Executar</button>
+      <div class="console" id="mdc-out"><span class="empty">A saída aparece aqui após executar.</span></div>
+      <details class="source">
+        <summary>Ver código-fonte</summary>
+        <div class="code-block" id="mdc-src"></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 05 Quicksort -->
+  <section class="panel" id="quicksort">
+    <div class="panel-head">
+      <h1 class="panel-title">Quicksort</h1>
+      <p class="panel-desc">Ordena uma lista de números usando particionamento recursivo em torno de um elemento pivô.</p>
+    </div>
+    <div class="card">
+      <div class="field-row">
+        <div class="field" style="flex: 2;">
+          <label for="qs-arr">Lista de números (separados por vírgula)</label>
+          <input type="text" id="qs-arr" value="8, 3, 15, 1, 9, 4, 27, 6">
+        </div>
+      </div>
+      <button class="run-btn" onclick="runQuicksort()">Executar</button>
+      <div class="console" id="qs-out"><span class="empty">A saída aparece aqui após executar.</span></div>
+      <details class="source">
+        <summary>Ver código-fonte</summary>
+        <div class="code-block" id="qs-src"></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 06 Contagem em intervalo -->
+  <section class="panel" id="intervalo">
+    <div class="panel-head">
+      <h1 class="panel-title">Contagem em intervalo</h1>
+      <p class="panel-desc">Conta e lista os números inteiros de um intervalo [A, B] que satisfazem um filtro escolhido.</p>
+    </div>
+    <div class="card">
+      <div class="field-row">
+        <div class="field">
+          <label for="int-a">Início (A)</label>
+          <input type="number" id="int-a" value="1" step="1">
+        </div>
+        <div class="field">
+          <label for="int-b">Fim (B)</label>
+          <input type="number" id="int-b" value="30" step="1">
+        </div>
+        <div class="field">
+          <label for="int-filtro">Filtro</label>
+          <select id="int-filtro">
+            <option value="todos">Todos os números</option>
+            <option value="pares">Somente pares</option>
+            <option value="impares">Somente ímpares</option>
+            <option value="primos">Somente primos</option>
+          </select>
+        </div>
+      </div>
+      <button class="run-btn" onclick="runIntervalo()">Executar</button>
+      <div class="console" id="int-out"><span class="empty">A saída aparece aqui após executar.</span></div>
+      <details class="source">
+        <summary>Ver código-fonte</summary>
+        <div class="code-block" id="int-src"></div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
